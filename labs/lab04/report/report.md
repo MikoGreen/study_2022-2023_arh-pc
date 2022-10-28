@@ -8,10 +8,6 @@ author: "Рогожина Надежда Александровна"
 lang: ru-RU
 toc-title: "Содержание"
 
-## Bibliography
-bibliography: bib/cite.bib
-csl: pandoc/csl/gost-r-7-0-5-2008-numeric.csl
-
 ## Pdf output format
 toc: true # Table of contents
 toc-depth: 2
@@ -41,16 +37,6 @@ mainfontoptions: Ligatures=TeX
 romanfontoptions: Ligatures=TeX
 sansfontoptions: Ligatures=TeX,Scale=MatchLowercase
 monofontoptions: Scale=MatchLowercase,Scale=0.9
-## Biblatex
-biblatex: true
-biblio-style: "gost-numeric"
-biblatexoptions:
-  - parentracker=true
-  - backend=biber
-  - hyperref=auto
-  - language=auto
-  - autolang=other*
-  - citestyle=gost-numeric
 ## Pandoc-crossref LaTeX customization
 figureTitle: "Рис."
 tableTitle: "Таблица"
@@ -94,7 +80,7 @@ header-includes:
 :Основные команды git { #tbl:std-dir }
 
 | Команда      | Краткое описание    |
-|--------------|----------------------------------------------------------------------------------------------------------------------------|
+|--------------|--------------------------------------------------------------------------------------------------------------------|
 | `git unit`| Создание основного дерева репозитория                                              |
 | `git push`| Отправка всех произведённых изменений локального дерева в центральный репозиторий  |
 | `git status`| Просмотрр списка изменённых файлов в текущей директории                          |
@@ -129,65 +115,62 @@ header-includes:
 
 # Выполнение лабораторной работы
 
-Первым шагом создадим аккаунт на github.com: (рис. [-@fig:001])
+Первым шагом создадим аккаунт на github.com:
 
 ![Создание аккаунта на github.com](/home/narogozhina/Изображения/1.png){ #fig:001 width=70% }
 
 Прежде всего проведем базовую настройку git:
 
-![Сделаем предварительную конфигурацию](/home/narogozhina/Изображения/2.png) { #fig:002 width=70% }
+![Сделаем предварительную конфигурацию](/home/narogozhina/Изображения/2.png){ #fig:002 width=70% }
 
-![Настроим utf-8 в выводе сообщений git](/home/narogozhina/Изображения/3.png) { #fig:003 width=70% }
+![Настроим utf-8 в выводе сообщений git](/home/narogozhina/Изображения/3.png){ #fig:003 width=70% }
 
-![Зададим имя начальной ветки(будем называть её master):](/home/narogozhina/Изображения/4.png) { #fig:004 width=70% }
+![Зададим имя начальной ветки(будем называть её master):](/home/narogozhina/Изображения/4.png){ #fig:004 width=70% }
 
-![Параметр autocrlf](/home/narogozhina/Изображения/5.png) { #fig:005 width=70% }
+![Параметр autocrlf](/home/narogozhina/Изображения/5.png){ #fig:005 width=70% }
 
-![Параметр safecrlf](/home/narogozhina/Изображения/6.png) { #fig:006 width=70% }
+![Параметр safecrlf](/home/narogozhina/Изображения/6.png){ #fig:006 width=70% }
 
 Для последующей идентификации пользователя на сервере репозиториев необходимо сгенерировать пару ключей (приватный и открытый):
 
-![Генерация ключа SSH](/home/narogozhina/Изображения/7.png) { #fig:007 width=70% }
+![Генерация ключа SSH](/home/narogozhina/Изображения/7.png){ #fig:007 width=70% }
 
-![Скопировав ключ из локальной консоли в буфер обмена:](/home/narogozhina/Изображения/8.png) { #fig:008 width=70% }
+![Скопировав ключ из локальной консоли в буфер обмена:](/home/narogozhina/Изображения/8.png){ #fig:008 width=70% }
 
-![Вставляем в специальное поле на сайте github.com и указываем имя ключа](/home/narogozhina/Изображения/9.png) { #fig:009 width=70% }
+![Вставляем в специальное поле на сайте github.com и указываем имя ключа](/home/narogozhina/Изображения/9.png){ #fig:009 width=70% }
 
-![Создадим каталог для предмета "Архитектура компьютера"](/home/narogozhina/Изображения/10.png) { #fig:010 width=70% }
+![Создадим каталог для предмета "Архитектура компьютера"](/home/narogozhina/Изображения/10.png){ #fig:010 width=70% }
 
-![Переходим по ссылке на страницу репозитория с шаблоном курса](/home/narogozhina/Изображения/11.png) { #fig:011 width=70% }
+![Переходим по ссылке на страницу репозитория с шаблоном курса](/home/narogozhina/Изображения/11.png){ #fig:011 width=70% }
 
-![Зададим имя репозитория и создадим его](/home/narogozhina/Изображения/12.png) { #fig:012 width=70% }
+![Зададим имя репозитория и создадим его](/home/narogozhina/Изображения/12.png){ #fig:012 width=70% }
 
-![Созданный репозиторий](/home/narogozhina/Изображения/13.png) { #fig:013 width=70% }
+![Созданный репозиторий](/home/narogozhina/Изображения/13.png){ #fig:013 width=70% }
 
-![Перейдем из терминала в каталог курса](/home/narogozhina/Изображения/14.png) { #fig:014 width=70% }
+![Перейдем из терминала в каталог курса](/home/narogozhina/Изображения/14.png){ #fig:014 width=70% }
 
-![Клонируем созданный репозиторий](/home/narogozhina/Изображения/15.png) { #fig:015 width=70% }
+![Клонируем созданный репозиторий](/home/narogozhina/Изображения/15.png){ #fig:015 width=70% }
 
-![Переходим в каталог курса](/home/narogozhina/Изображения/16.png) { #fig:016 width=70% }
+![Переходим в каталог курса](/home/narogozhina/Изображения/16.png){ #fig:016 width=70% }
 
-![Удаляем лишние файлы](/home/narogozhina/Изображения/17.png) { #fig:017 width=70% }
+![Удаляем лишние файлы](/home/narogozhina/Изображения/17.png){ #fig:017 width=70% }
 
-![Создаем необходимые каталоги](/home/narogozhina/Изображения/18.png) { #fig:018 width=70% }
+![Создаем необходимые каталоги](/home/narogozhina/Изображения/18.png){ #fig:018 width=70% }
 
-![Отправляем  файлы на сервер](/home/narogozhina/Изображения/19.png) { #fig:019 width=70% }
+![Отправляем  файлы на сервер](/home/narogozhina/Изображения/19.png){ #fig:019 width=70% }
 
-![Проверяем правильность создания иерархии рабочего пространства](/home/narogozhina/Изображения/20.png) { #fig:020 width=70% }
+![Проверяем правильность создания иерархии рабочего пространства](/home/narogozhina/Изображения/20.png){ #fig:020 width=70% }
 
 Подгружаем предыдущие лабораторные работы
 
-![Загрузка отчета по 1 лабораторной работе](/home/narogozhina/Изображения/21.png) { #fig:021 width=70% }
+![Загрузка отчета по 1 лабораторной работе](/home/narogozhina/Изображения/21.png){ #fig:021 width=70% }
 
-![Загрузка отчета по 2 лабораторной работе](/home/narogozhina/Изображения/22.png) { #fig:022 width=70% }
+![Загрузка отчета по 2 лабораторной работе](/home/narogozhina/Изображения/22.png){ #fig:022 width=70% }
 
 А также подгружаем данную работу:
 
-![Загрузка отчета по 3 лабораторной работе](/home/narogozhina/Изображения/23.png) { #fig:023 width=70% }
+![Загрузка отчета по 3 лабораторной работе](/home/narogozhina/Изображения/23.png){ #fig:023 width=70% }
 
 # Выводы
 
 В процессе выполнения работы мне удалось изучить  идеологию и применение средств контроля версий, а также приобрести навыки работы   с системой git.
-
-::: {#refs}
-:::
